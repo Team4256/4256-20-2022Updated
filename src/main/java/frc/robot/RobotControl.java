@@ -145,7 +145,7 @@ public class RobotControl {
                 // }
                 
                 
-                swerve.setSpeed(speed);
+                //swerve.setSpeed(speed);
             // if (spin == 0) {
             //         if (previousSpinCommand != 0) {
             //             if (Math.abs(gyro.getInstance().getRate()) <= 1.0) {
@@ -164,6 +164,7 @@ public class RobotControl {
                 SmartDashboard.putNumber("spinCommand", spin);
                 swerve.setSpin(aligner.setSwervePIDOn(spin));
                 swerve.travelTowards(direction);
+                swerve.setSpeed(speed);
                 swerve.completeLoopUpdate();
 
                 SmartDashboard.putNumber("Swerve Speed", speed);
@@ -180,16 +181,16 @@ public class RobotControl {
 
     public void shooterPeriodic() {
         if (driver.getPOV() == (Xbox.DPAD_EAST)) {
-            cellShooter.setShooterSpeed(.9);
+            cellShooter.setShooterSpeed(.3);
         }
         if (driver.getPOV() == (Xbox.DPAD_NORTH)) {
-            cellShooter.setShooterSpeed(.79);
+            cellShooter.setShooterSpeed(.5);
         }
         if (driver.getPOV() == (Xbox.DPAD_WEST)) {
-            cellShooter.setShooterSpeed(.7);
+            cellShooter.setShooterSpeed(.6);
         }
         if (driver.getPOV() == (Xbox.DPAD_SOUTH)) {
-            cellShooter.setShooterSpeed(1);
+            cellShooter.setShooterSpeed(.7);
         }
         if (gunner.getRawButtonPressed(Xbox.BUTTON_RB)) {  //Hold and release
             cellShooter.ShootNoAlign();

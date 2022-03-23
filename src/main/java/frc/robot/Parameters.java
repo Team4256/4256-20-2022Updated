@@ -118,11 +118,31 @@ public class Parameters{
             // public static final double angleEncoderTareVoltage[] = {3.527,2.863,2.382,1.335};
 
             //COMPETITION ROBOT
-            public static final double angleEncoderMinVoltage[] = {0.0085, 0.004883, 0.0073, 0.0122};
-            public static final double angleEncoderMaxVoltage[] = {4.9243,4.916992, 4.9157, 4.9218};
-            public static final double angleEncoderTareVoltage[] = {3.494873, 2.937011, 2.385254, 1.353760};
-     
-    // Aligner tolerances
+            // public static final double angleEncoderMinVoltage[] = {0.0085, 0.004883, 0.0073, 0.0122};
+            // public static final double angleEncoderMaxVoltage[] = {4.9243,4.916992, 4.9157, 4.9218};
+
+
+
+              // COMPETITION ROBOT
+            //ensure swerves are on analog 0-3
+            /**
+             * Swerve #1 = 4.45
+             * Swerve #2 = 1.22
+             * Swerve #3 = 4.35
+             * Swerve #4 = 
+             * Swerve #5 = 2.89
+             * Swerve #6 = 4.86
+             * Swerve #7 = 1.75
+             * Swerve #8 =  3.60
+             * Swerve #9 = 1.00
+             * Swerve #10 = 1.03
+             */
+
+             public static final double angleEncoderTareVoltage[] = {1.03, 4.45, 3.60, 1.75};     
+             public static final double angleEncoderMinVoltage[] = {.012, .0036, .068, .019};
+             public static final double angleEncoderMaxVoltage[] = {4.9, 4.9, 4.9, 4.9};
+    
+            // Aligner tolerances
 
     public static final double POSITION_TOLERANCE = 0.00;
     public static final double VELOCITY_TOLERANCE = 0.00;

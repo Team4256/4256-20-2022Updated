@@ -108,16 +108,12 @@ public class RobotControl {
             spin = 0.0;
         } else {
             speed = driver.getCurrentRadius(Xbox.STICK_LEFT, true);
-            direction = driver.getCurrentAngle((Xbox.STICK_LEFT), true);
+            direction = -driver.getCurrentAngle((Xbox.STICK_LEFT), true);
             spin = 0.8 * driver.getDeadbandedAxis(Xbox.AXIS_RIGHT_X);// normal mode
             speed *= speed;
             spin *= spin * Math.signum(spin);
             turbo = driver.getRawButton(Xbox.BUTTON_STICK_LEFT);
-
         }
-
-        //SmartDashboard.putNumber("Swerve Speed", speed);
-        
 
         if (true) {
             //SmartDashboard.putNumber("dist. to target", camera.getDistanceToTarget());
@@ -162,18 +158,13 @@ public class RobotControl {
             // }
                     
                 SmartDashboard.putNumber("spinCommand", spin);
-                swerve.setSpin(aligner.setSwervePIDOn(spin));
-                swerve.travelTowards(direction);
+                swerve.setSpin(spin);
+                swerve.travelTowards(-direction);
                 swerve.setSpeed(speed);
                 swerve.completeLoopUpdate();
-
                 SmartDashboard.putNumber("Swerve Speed", speed);
             }       
         }
-        // SmartDashboard.putNumber("Xposition", gyro.getDisplacementX());
-        // SmartDashboard.putNumber("Yposition", gyro.getDisplacementY());
-        // SmartDashboard.putNumber("Zposition", gyro.getDisplacementZ());
-
     }
 
     // Shooter Periodic
@@ -190,7 +181,7 @@ public class RobotControl {
             cellShooter.setShooterSpeed(.6);
         }
         if (driver.getPOV() == (Xbox.DPAD_SOUTH)) {
-            cellShooter.setShooterSpeed(.7);
+            cellShooter.setShooterSpeed(1);
         }
         if (gunner.getRawButtonPressed(Xbox.BUTTON_RB)) {  //Hold and release
             cellShooter.ShootNoAlign();

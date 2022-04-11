@@ -136,10 +136,50 @@ public class Parameters{
              * Swerve #10 = 3.49 A
              */
 
-             public static final double angleEncoderTareVoltage[] = {3.49, 1.99, 1.14, 4.2};     
-             public static final double angleEncoderMinVoltage[] = {.0085, .0036, .018, .026};
-             public static final double angleEncoderMaxVoltage[] = {4.9, 4.9, 4.9, 4.9};
-    
+            //  public static final double angleEncoderTareVoltage[] = {3.49, 1.99, 1.14, 4.2};     
+            //  public static final double angleEncoderMinVoltage[] = {.0085, .0036, .018, .026};
+            //  public static final double angleEncoderMaxVoltage[] = {4.9, 4.9, 4.9, 4.9};
+            public static final double angleEncoderMinVoltage[] = {
+              //   .008544921,
+              //   .020751951,
+              //   0.01220703,
+              //   0.026855466,
+              0.0037,
+              0.0110,
+              0.0208,
+              0.01010
+               };
+              public static final double angleEncoderMaxVoltage[] = {
+                // 4.921874496,
+                // 4.921874496,
+                // 4.913329475000001,
+                // 4.887694812,
+                4.880,
+                4.9231,
+                4.9243,
+                4.9243
+              };
+              // COMPETITION ROBOT
+              //ensure swerves are on analog 0-3
+              /**
+               * Swerve #1 = 3.21
+               * Swerve #2 = 1.22
+               * Swerve #3 = 0.68
+               * Swerve #4 = 
+               * Swerve #5 = 2.91
+               * Swerve #6 = 4.31
+               * Swerve #7 = 
+               * Swerve #8 = 
+               * Swerve #9 = 1.00
+               *Swerve #10 = 2.29
+               */
+              //CURRENT COMPETITON SWERVES: A=2, B=6 , C=3, D=9
+              public static final double angleEncoderTareVoltage[] = {
+                3.21,
+                2.29,
+                2.91,
+                0.68
+              };
             // Aligner tolerances
 
     public static final double POSITION_TOLERANCE = 0.00;
